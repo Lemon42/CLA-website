@@ -1,3 +1,24 @@
+/* Normalização */
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+/* Fim Normalização */
+
 /* Nav-Bar */
 button{
     margin: 5px 20px;
@@ -79,3 +100,11 @@ button:focus{
   padding-left: 0;
 }
 /* Fim Barra de Pesquisa*/
+
+/* Rodapé */
+#rodape{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+   background: #B22222;
+}
+/* Fim Rodapé */
