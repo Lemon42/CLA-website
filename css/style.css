@@ -61,3 +61,21 @@ button:focus{
     }
 }
 /* Fim Nav-Bar */
+
+/* Barra de Pesquisa */
+#divBarraPesquisa{
+    margin-top: 15px !important;
+    width: 80%;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+/* Fim Barra de Pesquisa*/
