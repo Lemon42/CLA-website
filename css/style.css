@@ -101,6 +101,46 @@ button:focus{
 }
 /* Fim Barra de Pesquisa*/
 
+/* Card de Veículos */
+.card{
+  width: 19rem;
+  font-family: 'Roboto', sans-serif;;
+}
+.card-body {
+  padding: 0.5rem !important;
+}
+
+.card-title{
+  color: #da2020;
+}
+
+.card-img{
+  margin-bottom: 0.4rem;
+}
+
+.card-text{
+  margin-bottom: 0.2rem;
+}
+
+.card-text-secondary{
+  color: #565656;
+  font-size: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-text-type{
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.card-text-value{
+  color: #da2020;
+  font-size: 1.5rem;
+  float: right;
+  margin-bottom: 0px;
+}
+/* Fim Card de Veículos */
+
 /* Rodapé */
 #rodape{
    flex: 0 0 auto;
