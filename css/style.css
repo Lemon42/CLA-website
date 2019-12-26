@@ -86,7 +86,7 @@ button:focus{
 /* Barra de Pesquisa */
 #divBarraPesquisa{
     margin-top: 15px !important;
-    width: 80%;
+    width: 100%;
 }
 
 .form-control:focus {
@@ -106,5 +106,6 @@ button:focus{
    flex: 0 0 auto;
    -webkit-flex: 0 0 auto;
    background: #B22222;
+   color: #fff;
 }
 /* Fim Rodapé */
