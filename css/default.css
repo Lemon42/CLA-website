@@ -1,9 +1,9 @@
 /*Selecao do Mause*/
 ::selection {
-    background: #73D1FF; color: #000;
+    background: #BF2424; color: #000;
 }
 ::-moz-selection {
-    background: #73D1FF; color: #000;
+    background: #BF2424; color: #000;
 }
 
 /*Barra de Rolagem*/
