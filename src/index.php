@@ -1,3 +1,8 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+include("server-functions/connect.php");
+include("server-functions/get-dados.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -70,18 +75,34 @@
 
 				<!-- CardsVeículos -->
 				<div class="row">
-					<div class="col-md-6 col-xl-4 mb-3 mb-md-4">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Golf GTI (nome)</h5>
-								<img class="card-img" src="../img/imagem-test.jpg">
-								<p class="card-text">2.0 GT SPORT 16V TURBO GASOLINA 4P AUTOMÁTICO (descrição e blabla)</p>
-								<p class="card-text-secondary">49.000 Km - (2011/2012)</p>
-								<p class="card-text-type">Carro</p>
-								<p class="card-text-value">R$ 40.000,00</p>
-							</div>
+				<?php
+					if($total > 0) {
+						do {
+				?>
+				<div class="col-md-6 col-xl-4 mb-3 mb-md-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title"><?=$linha['nome']?></h5>
+							<!-- Imagem -->
+							<?php
+							$id = $linha['id'];
+							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id' LIMIT 1");
+							while($row = mysql_fetch_array($res)){
+
+							echo '<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />';
+							}
+							?>
+							<p class="card-text"><?=$linha['descricao']?></p>
+							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
+							<p class="card-text-type"><?=$linha['tipo']?></p>
+							<p class="card-text-value">R$ <?=$linha['valor']?></p>
 						</div>
 					</div>
+				</div>
+				<?php
+						}while($linha = mysql_fetch_assoc($dados));
+					}
+				?>
 				</div>
 				<!-- /CardsVeículos -->
 			</div>

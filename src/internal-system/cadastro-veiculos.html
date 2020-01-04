@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link href="../../vendor/bootstrap-4/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Cadastro de Veículos</title>
+    <link rel="shortcut icon" href="../../img/engrenagem.png" type="image/x-icon" />
+</head>
+
+<body>
+    <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
+        onsubmit="return validaCampo(); return false;" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td width="69">Nome:</td>
+                <td width="546"><input name="nome" class="campo-formulario" type="text" id="nome" size="70"
+                        maxlength="60" /></td>
+            </tr>
+            <tr>
+                <td width="69">Descrição:</td>
+                <td width="546"><input name="descricao" class="campo-formulario" type="text" id="descricao" size="70"
+                        maxlength="60" /></td>
+            </tr>
+            <tr>
+                <td width="69">Quilometragem:</td>
+                <td width="546"><input name="km" class="campo-formulario" type="number" id="km" size="70"
+                        maxlength="60" step="0.010" /></td>
+            </tr>
+            <tr>
+                <td width="69">Ano:</td>
+                <td width="546"><input name="ano" class="campo-formulario" type="text" id="ano" size="70"
+                        maxlength="60" /></td>
+            </tr>
+            <tr>
+                <td width="69">Tipo:</td>
+                <td width="546"><input name="tipo" class="campo-formulario" type="text" id="tipo" size="70"
+                        maxlength="60" /></td>
+            </tr>
+            <tr>
+                <td width="69">Valor:</td>
+                <td width="546"><input name="valor" class="campo-formulario" type="number" id="valor" size="70"
+                        maxlength="60" step="0.0010" /></td>
+            </tr>
+            <tr>
+                <td width="546"><input name="img[]" class="inputFile" type="file" alt="Submit" multiple="" required accept="image/*"></td>
+            </tr>
+            <tr>
+                <td><input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar!" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Scripts Obrigatórios -->
+    <!-- Jquery JS -->
+    <script src="../../vendor/jquery/3.4.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../../vendor/bootstrap-4/bootstrap.min.js"></script>
+    <!-- FontAwesome JS -->
+    <script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
+    <!-- Validação -->
+    <script src="../../js/form-validacao.js"></script>
+</body>
+
+</html>
