@@ -1,0 +1,8 @@
+#tabala-exclusao img{
+    height: 150px;
+    width: auto;
+}
+
+#tabala-exclusao td, th {
+    vertical-align: middle;
+}
