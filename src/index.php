@@ -92,6 +92,7 @@ include("server-functions/get-dados.php");
 							echo '<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />';
 							}
 							?>
+							<!-- Fim Imagem -->
 							<p class="card-text"><?=$linha['descricao']?></p>
 							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
 							<p class="card-text-type"><?=$linha['tipo']?></p>

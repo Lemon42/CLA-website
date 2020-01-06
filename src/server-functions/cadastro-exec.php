@@ -9,7 +9,7 @@
 <?php
 include("connect.php");
 
-$res = mysql_query("SELECT * FROM multiple");
+/*$res = mysql_query("SELECT * FROM multiple");*/
 
 // Pegando os dados
 $nome = $_POST ["nome"];
