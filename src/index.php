@@ -81,54 +81,57 @@ include("server-functions/get-dados.php");
 				?>
 				<div class="col-md-6 col-xl-4 mb-3 mb-md-4">
 					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title"><?=$linha['nome']?></h5>
-
-							<!-- Imagem -->
-							<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade" data-ride="carousel">
-  								<div class="carousel-inner">
-							<?php
-							$id = $linha['id'];
-							$primeiraImg = True;
-							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id'");
-							while($row = mysql_fetch_array($res)){
-							
-								if($primeiraImg == True)
-								{
-									echo '
-										<div class="carousel-item active">
-											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
-										</div>
-									';
-									$primeiraImg = False;
-								} else {
-									echo '
-										<div class="carousel-item">
-											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
-										</div>
-									';
-								}
-								
+						<a href="car-details.php?id=<?php echo $linha['id'] ?>">
+							<div class="card-body">
+								<h5 class="card-title"><?=$linha['nome']?></h5>
+						</a>
+						<!-- Imagem -->
+						<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade" data-ride="carousel">
+							<div class="carousel-inner">
+						<?php
+						$id = $linha['id'];
+						$primeiraImg = True;
+						$res = mysql_query("SELECT * FROM imagens WHERE id = '$id'");
+						while($row = mysql_fetch_array($res)){
+						
+							if($primeiraImg == True)
+							{
+								echo '
+									<div class="carousel-item active">
+										<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+									</div>
+								';
+								$primeiraImg = False;
+							} else {
+								echo '
+									<div class="carousel-item">
+										<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+									</div>
+								';
 							}
-							?>
-							</div>
-							<a class="carousel-control-prev" href="#carousel-<?=$linha['id']?>" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Anterior</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-<?=$linha['id']?>" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Próximo</span>
-							</a>
-							</div>
-							<!-- Fim Imagem -->
-
+							
+						}
+						?>
+					</div>
+				</a>
+					<a class="carousel-control-prev" href="#carousel-<?=$linha['id']?>" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Anterior</span>
+					</a>
+					<a class="carousel-control-next" href="#carousel-<?=$linha['id']?>" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Próximo</span>
+					</a>
+					</div>
+					<!-- Fim Imagem -->
+					<a href="car-details.php?id=<?php echo $linha['id'] ?>">
 							<p class="card-text"><?=$linha['descricao']?></p>
 							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
 							<p class="card-text-type"><?=$linha['tipo']?></p>
 							<p class="card-text-value">R$ <?=$linha['valor']?></p>
 						</div>
 					</div>
+					</a>
 				</div>
 				<?php
 						}while($linha = mysql_fetch_assoc($dados));
