@@ -10,7 +10,6 @@
 include("connect.php");
 
 $id = $_GET["id"];
-$idImagem = $id;
 
 // Deletando Veiculo
 $query = "
@@ -20,9 +19,13 @@ mysql_query($query,$con);
 
 // Deletando Imagem do Veiculo
 $query = "
-    DELETE FROM imagens WHERE  id = '$idImagem'
+    DELETE FROM imagens WHERE  id = '$id'
 ";
 mysql_query($query,$con);
+
+// Redirecionando para a pagina de exclusão
+header('Location: ../internal-system/exclusao-veiculos.php');
+exit();
 
 ?>
 </body>

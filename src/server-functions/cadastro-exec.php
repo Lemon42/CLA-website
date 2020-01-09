@@ -9,10 +9,8 @@
 <?php
 include("connect.php");
 
-/*$res = mysql_query("SELECT * FROM multiple");*/
-
 // Pegando os dados
-$nome = $_POST ["nome"];
+$nome = $_POST["nome"];
 $descricao = $_POST["descricao"];
 $km = $_POST["km"];
 $ano = $_POST["ano"];
@@ -46,7 +44,10 @@ for($i=0; $i<=count($file_tmp); $i++){
 	}
 }
 
-echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
+// Redirecionando para a pagina de exclusão
+header('Location: ../internal-system/cadastro-veiculos.html');
+exit();
+
 ?>
 </body>
 </html>
