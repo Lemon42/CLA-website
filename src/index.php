@@ -29,35 +29,37 @@ include("server-functions/get-dados.php");
 		<!-- Conteúdo -->
 		<div class="content">
 			<!-- NavBar -->
-			<nav class="navbar navbar-expand-lg navbar-dark">
-        <i style="font-size: 30px; color: #fff; margin-right: 10px;" class="fas fa-car"></i>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link">Início<span class="sr-only"></span></a>
+			<nav class="navbar navbar-expand-lg">
+				<i style="font-size: 30px; color: #fff; margin-right: 10px;" class="fas fa-car"></i>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+					aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"
+					style="border: #fff;">
+					<div id="menu"><span class="navbar-toggler-icon">&#9776;</span></div>
+				</button>
+				<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Início<span class="sr-only"></span></a>
 						</li>
-            <li class="nav-item dropdown active">
-							<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+						<li class="nav-item">
+							<a class="nav-link" href="#">Sobre Nós<span class="sr-only"></span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">
-								Marcas
+								Veículos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item">Volkswagen</a>
-								<a class="dropdown-item">Mercedes</a>
-								<a class="dropdown-item">Volvo</a>
+								<a class="dropdown-item" href="#">Seila</a>
+								<a class="dropdown-item" href="#">Seila</a>
+								<a class="dropdown-item" href="#">Seila</a>
 							</div>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link">Sobre Nós<span class="sr-only"></span></a>
-						</li>
 					</ul>
-        </div>
-      </nav>
+				</div>
+			</nav>
 			<!-- /NavBar -->
-
+			
 			<!-- Container -->
 			<div class="container">
 				<!-- BarraPesquisa -->
@@ -81,16 +83,46 @@ include("server-functions/get-dados.php");
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title"><?=$linha['nome']?></h5>
+
 							<!-- Imagem -->
+							<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade" data-ride="carousel">
+  								<div class="carousel-inner">
 							<?php
 							$id = $linha['id'];
-							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id' LIMIT 1");
+							$primeiraImg = True;
+							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id'");
 							while($row = mysql_fetch_array($res)){
-
-							echo '<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />';
+							
+								if($primeiraImg == True)
+								{
+									echo '
+										<div class="carousel-item active">
+											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+										</div>
+									';
+									$primeiraImg = False;
+								} else {
+									echo '
+										<div class="carousel-item">
+											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+										</div>
+									';
+								}
+								
 							}
 							?>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-<?=$linha['id']?>" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Anterior</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-<?=$linha['id']?>" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Próximo</span>
+							</a>
+							</div>
 							<!-- Fim Imagem -->
+
 							<p class="card-text"><?=$linha['descricao']?></p>
 							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
 							<p class="card-text-type"><?=$linha['tipo']?></p>
@@ -104,6 +136,7 @@ include("server-functions/get-dados.php");
 				?>
 				</div>
 				<!-- /CardsVeículos -->
+
 			</div>
 			<!-- /Container -->
 		</div>
@@ -120,5 +153,11 @@ include("server-functions/get-dados.php");
 		<script src="../vendor/bootstrap-4/bootstrap.min.js"></script>
 		<!-- FontAwesome JS -->
 		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
+
+		<script>
+			$('.carousel').carousel({
+  				interval: 2500
+			})
+		</script>
 	</body>
 </html>
