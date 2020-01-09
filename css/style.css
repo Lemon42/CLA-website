@@ -115,6 +115,10 @@ button:focus{
   color: #da2020;
 }
 
+a:hover{
+  text-decoration:none;
+}
+
 .card img{
   margin-bottom: 0.4rem;
   max-width: 100% !important;
@@ -125,6 +129,7 @@ button:focus{
 
 .card-text{
   margin-bottom: 0.2rem;
+  color: #000;
 }
 
 .card-text-secondary{
@@ -136,6 +141,7 @@ button:focus{
 .card-text-type{
   font-size: 1.2rem;
   margin-bottom: 0.1rem;
+  color: #000;
 }
 
 .card-text-value{
