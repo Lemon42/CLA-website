@@ -126,7 +126,7 @@ include("server-functions/get-dados.php");
 					<!-- Fim Imagem -->
 					<a href="car-details.php?id=<?php echo $linha['id'] ?>">
 							<p class="card-text"><?=$linha['descricao']?></p>
-							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
+							<p class="card-text-secondary">Ano: <?=$linha['ano']?> - <?=$linha['km']?> Km</p>
 							<p class="card-text-type"><?=$linha['tipo']?></p>
 							<p class="card-text-value">R$ <?=$linha['valor']?></p>
 						</div>
