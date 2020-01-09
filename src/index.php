@@ -83,16 +83,46 @@ include("server-functions/get-dados.php");
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title"><?=$linha['nome']?></h5>
+
 							<!-- Imagem -->
+							<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade" data-ride="carousel">
+  								<div class="carousel-inner">
 							<?php
 							$id = $linha['id'];
-							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id' LIMIT 1");
+							$primeiraImg = True;
+							$res = mysql_query("SELECT * FROM imagens WHERE id = '$id'");
 							while($row = mysql_fetch_array($res)){
-
-							echo '<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />';
+							
+								if($primeiraImg == True)
+								{
+									echo '
+										<div class="carousel-item active">
+											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+										</div>
+									';
+									$primeiraImg = False;
+								} else {
+									echo '
+										<div class="carousel-item">
+											<img class="card-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'">
+										</div>
+									';
+								}
+								
 							}
 							?>
+							</div>
+							<a class="carousel-control-prev" href="#carousel-<?=$linha['id']?>" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Anterior</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel-<?=$linha['id']?>" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Próximo</span>
+							</a>
+							</div>
 							<!-- Fim Imagem -->
+
 							<p class="card-text"><?=$linha['descricao']?></p>
 							<p class="card-text-secondary"><?=$linha['km']?> Km - (<?=$linha['ano']?>)</p>
 							<p class="card-text-type"><?=$linha['tipo']?></p>
@@ -106,6 +136,7 @@ include("server-functions/get-dados.php");
 				?>
 				</div>
 				<!-- /CardsVeículos -->
+
 			</div>
 			<!-- /Container -->
 		</div>
@@ -122,5 +153,11 @@ include("server-functions/get-dados.php");
 		<script src="../vendor/bootstrap-4/bootstrap.min.js"></script>
 		<!-- FontAwesome JS -->
 		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
+
+		<script>
+			$('.carousel').carousel({
+  				interval: 2500
+			})
+		</script>
 	</body>
 </html>
