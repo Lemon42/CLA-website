@@ -115,8 +115,12 @@ button:focus{
   color: #da2020;
 }
 
-.card-img{
+.card img{
   margin-bottom: 0.4rem;
+  max-width: 100% !important;
+  width: 1000px !important;
+  height: 250px !important;
+  object-fit: cover !important;
 }
 
 .card-text{
