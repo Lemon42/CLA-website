@@ -17,44 +17,47 @@
 <body>
     <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
         onsubmit="return validaCampo(); return false;" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <td width="69">Nome:</td>
-                <td width="546"><input name="nome" class="campo-formulario" type="text" id="nome" size="70"
-                        maxlength="60" /></td>
-            </tr>
-            <tr>
-                <td width="69">Descrição:</td>
-                <td width="546"><input name="descricao" class="campo-formulario" type="text" id="descricao" size="70"
-                        maxlength="60" /></td>
-            </tr>
-            <tr>
-                <td width="69">Quilometragem:</td>
-                <td width="546"><input name="km" class="campo-formulario" type="number" id="km" size="70"
-                        maxlength="60" step="0.010" /></td>
-            </tr>
-            <tr>
-                <td width="69">Ano:</td>
-                <td width="546"><input name="ano" class="campo-formulario" type="text" id="ano" size="70"
-                        maxlength="60" /></td>
-            </tr>
-            <tr>
-                <td width="69">Tipo:</td>
-                <td width="546"><input name="tipo" class="campo-formulario" type="text" id="tipo" size="70"
-                        maxlength="60" /></td>
-            </tr>
-            <tr>
-                <td width="69">Valor:</td>
-                <td width="546"><input name="valor" class="campo-formulario" type="number" id="valor" size="70"
-                        maxlength="60" step="0.0010" /></td>
-            </tr>
-            <tr>
-                <td width="546"><input name="img[]" class="inputFile" type="file" alt="Submit" multiple="" required accept="image/*"></td>
-            </tr>
-            <tr>
-                <td><input name="cadastrar" type="submit" id="cadastrar" value="Cadastrar!" /></td>
-            </tr>
-        </table>
+
+        <div class="form-control">
+            <div class="form-group">
+                <label for="label"><i class="far fa-bookmark"></i><strong style="margin-left: 8px;">Cadastro de Veículos</strong></label>
+            </div>
+            <div class="form-group">
+                <label for="label">Nome:</label>
+                <input name="nome" placeholder="Marca e nome do veículo" class="campo-formulario form-control" type="text" id="nome" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="label">Descrição:</label>
+                <input name="descricao" placeholder="Características importantes do veículo" class="campo-formulario form-control" type="text" id="descricao" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="label">Quilometragem:</label>
+                <input name="km" placeholder="Quanto que o veiculo andou ao todo" class="campo-formulario form-control quilometro" id="km" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="label">Ano:</label>
+                <td width="546"><input name="ano" placeholder="Ano de fabricação" class="campo-formulario form-control" type="number" id="ano" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="label">Tipo de Veiculo:</label>
+                <select name="tipo" class="campo-formulario form-control" type="text" id="tipo">
+                    <option>Carro</option>
+                    <option>Caminhão</option>
+                    <option>Moto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="label">Valor:</label>
+                <input name="valor" placeholder="R$" class="campo-formulario form-control dinheiro" type="text" id="valor" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="label">Imagens:</label>
+                <input name="img[]" class="inputFile" type="file" alt="Submit" multiple="" required accept="image/*">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-outline-primary" name="cadastrar" type="submit" id="cadastrar" value="Cadastrar!" />
+            </div>
+        </div>
     </form>
     <!-- Scripts Obrigatórios -->
     <!-- Jquery JS -->
@@ -65,5 +68,11 @@
     <script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
     <!-- Validação -->
     <script src="../../js/form-validacao.js"></script>
+    <!-- Mascara para Input -->
+    <script src="../../js/mask-number-min.js"></script>
+    <script>
+        $('.dinheiro').mask('#.##0,00', { reverse: true });
+        $('.quilometro').mask('#.##0', { reverse: true });
+    </script>
 </body>
 </html>
