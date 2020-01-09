@@ -1,0 +1,64 @@
+.title_car{
+  font-size: 40px;
+}
+.subt_car{
+  font-size: 20px;
+  color: #808080 !important;
+}
+
+.desc_title{
+  font-size: 25px;
+}
+
+.desc_item{
+  font-size: 18px;
+}
+
+.desc_item_2{
+  font-size: 18px;
+  color: #595959 !important;
+}
+
+.hr_maior{
+  background-color: #000000;
+  border: 0px;
+  height: 1px;
+  margin-top: 0px;
+}
+
+.hr_menor{
+  background-color: #b3b3b3;
+  border: 0px;
+  height: 1px;
+}
+
+@media only screen and (max-width: 484px) {
+  .title_car{
+    font-size: 25px;
+  }
+  .subt_car{
+    font-size: 12px;
+  }
+  .desc_title{
+    font-size: 18px;
+  }
+
+  .desc_item{
+    font-size: 12px;
+  }
+  .desc_item_2{
+    font-size: 12px;
+    color: #595959 !important;
+  }
+  .hr_menor{
+    background-color: #000000;
+    border: 0px;
+    height: 0.5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+  #rodape{
+    font-size: 13px;
+  }
+
+}
