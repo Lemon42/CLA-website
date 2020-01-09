@@ -67,7 +67,6 @@ include("../server-functions/get-dados.php");
     </table>
 
     <!-- Scripts Obrigatórios -->
-    <script src="../../js/tela-confirmacao.js"></script>
     <!-- Jquery JS -->
     <script src="../../vendor/jquery/3.4.1.min.js"></script>
     <!-- Bootstrap JS -->
