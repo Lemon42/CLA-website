@@ -34,7 +34,7 @@ include("server-functions/get-dados.php");
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
 					aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"
 					style="border: #fff;">
-					<div id="menu"><span class="navbar-toggler-icon">&#9776;</span></div>
+					<div id="menu"><i id="menu" class="fas fa-bars"></i></div>
 				</button>
 				<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 					<ul class="navbar-nav mr-auto">
