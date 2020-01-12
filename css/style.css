@@ -1,6 +1,4 @@
-@charset "UTF-8";
-/* Normalização */
-html{
+
     height: 100%;
 }
 
@@ -28,10 +26,11 @@ button:focus{
     outline: none;
     outline-offset: 0px;
 }
+
 .caixa{
     width: 500px;
     height: 300px;
-    margin-top: 30px;
+    margin-top: 30px; 
 }
 
 .navbar{
@@ -64,7 +63,6 @@ button:focus{
 #menu {
     color: #fff;
     font-size: 30px;
-    margin-top: 15px;
     box-shadow: none !important;
 }
 
@@ -115,12 +113,21 @@ button:focus{
   color: #da2020;
 }
 
-.card-img{
+a:hover{
+  text-decoration:none;
+}
+
+.card img{
   margin-bottom: 0.4rem;
+  max-width: 100% !important;
+  width: 1000px !important;
+  height: 250px !important;
+  object-fit: cover !important;
 }
 
 .card-text{
   margin-bottom: 0.2rem;
+  color: #000;
 }
 
 .card-text-secondary{
@@ -132,6 +139,7 @@ button:focus{
 .card-text-type{
   font-size: 1.2rem;
   margin-bottom: 0.1rem;
+  color: #000;
 }
 
 .card-text-value{
