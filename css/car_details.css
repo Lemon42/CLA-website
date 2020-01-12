@@ -1,13 +1,28 @@
+.content{
+  font-family: 'Roboto', sans-serif;
+  margin-top: 25px !important;
+}
+
 .title_car{
   font-size: 40px;
+  margin-top: 25px !important;
+  color: #da2020 !important;
 }
 .subt_car{
   font-size: 20px;
   color: #808080 !important;
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+
+.valor_car{
+  color: #da2020 !important;
+  font-size: 2rem;
 }
 
 .desc_title{
   font-size: 25px;
+  margin-top: 15px;
 }
 
 .desc_item{
