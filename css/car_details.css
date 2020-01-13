@@ -3,69 +3,71 @@
   margin-top: 25px !important;
 }
 
-.title_car{
-  font-size: 40px;
-  margin-top: 25px !important;
+.title-car{
+  font-size: 2rem;
   color: #da2020 !important;
 }
-.subt_car{
+.subt-car{
   font-size: 20px;
-  color: #808080 !important;
-  margin-top: 25px;
-  margin-bottom: 8px;
-}
+  color: #808080 !important;}
 
-.valor_car{
+.valor-car{
   color: #da2020 !important;
   font-size: 2rem;
+  float: right;
+  margin-bottom: 0px;
 }
 
-.desc_title{
+.desc-title{
   font-size: 25px;
   margin-top: 15px;
 }
 
-.desc_item{
+.desc-item{
   font-size: 18px;
 }
 
-.desc_item_2{
+.desc-item-2{
   font-size: 18px;
   color: #595959 !important;
 }
 
-.hr_maior{
+.hr-maior{
   background-color: #000000;
   border: 0px;
   height: 1px;
   margin-top: 0px;
 }
 
-.hr_menor{
+.hr-menor{
   background-color: #b3b3b3;
   border: 0px;
   height: 1px;
 }
 
 @media only screen and (max-width: 484px) {
-  .title_car{
+  .title-car{
     font-size: 25px;
   }
-  .subt_car{
+  .subt-car{
     font-size: 12px;
   }
-  .desc_title{
+  .valor-car{
+    font-size: 25px;
+    float: left !important;
+  }
+  .desc-title{
     font-size: 18px;
   }
 
-  .desc_item{
+  .desc-item{
     font-size: 12px;
   }
-  .desc_item_2{
+  .desc-item-2{
     font-size: 12px;
     color: #595959 !important;
   }
-  .hr_menor{
+  .hr-menor{
     background-color: #000000;
     border: 0px;
     height: 0.5px;
