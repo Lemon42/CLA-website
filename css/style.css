@@ -1,4 +1,6 @@
-
+@charset "UTF-8";
+/* Normalização */
+html{
     height: 100%;
 }
 
