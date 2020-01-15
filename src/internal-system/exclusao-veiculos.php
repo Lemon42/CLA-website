@@ -1,4 +1,5 @@
 <?php
+require("../server-functions/autentica-login.php");
 header('Content-Type: text/html; charset=utf-8');
 include("../server-functions/connect.php");
 include("../server-functions/get-dados.php");
@@ -19,6 +20,10 @@ include("../server-functions/get-dados.php");
 
     <title>Exclusão de Veículos</title>
     <link rel="shortcut icon" href="../../img/engrenagem.png" type="image/x-icon" />
+    
+    <style>
+		body{font-family: 'Roboto', sans-serif;}
+	</style>
 </head>
 <body> 
     <table id="tabala-exclusao" class="table table-image">
