@@ -1,3 +1,6 @@
+<?php
+require('../server-functions/autentica-login.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,6 +16,10 @@
 
     <title>Cadastro de Veículos</title>
     <link rel="shortcut icon" href="../../img/engrenagem.png" type="image/x-icon" />
+
+    <style>
+		body{font-family: 'Roboto', sans-serif;}
+	</style>
 </head>
 <body>
     <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
