@@ -8,7 +8,7 @@ $pass = "usbw";
 $con = mysql_pconnect($host, $user, $pass) or trigger_error(mysql_error(),E_USER_ERROR); 
 mysql_select_db($db, $con);
 
-$mysqli = new mysqli($host, $user, $pass, $db);
+$mysqli = new mysqli($host, $user, $pass, $db) or die(mysqli_error());
 
 // deixamdo conexão em UTF-8
 mysql_query("SET NAMES 'utf8'");
