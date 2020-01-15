@@ -45,7 +45,7 @@ for($i=0; $i<=count($file_tmp); $i++){
 }
 
 // Redirecionando para a pagina de exclusão
-header('Location: ../internal-system/cadastro-veiculos.html');
+header('Location: ../internal-system/cadastro-veiculos.php');
 exit();
 
 ?>
