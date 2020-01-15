@@ -109,7 +109,6 @@ include("server-functions/get-dados.php");
 									</div>
 								';
 							}
-							
 						}
 						?>
 					</div>
