@@ -51,7 +51,6 @@
 					</ul>
         </div>
       </nav>
-
       <!-- /NavBar -->
 
       <!-- Container -->
