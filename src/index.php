@@ -30,7 +30,7 @@ include("server-functions/get-dados.php");
 		<div class="content">
 			<!-- NavBar -->
 			<nav class="navbar navbar-expand-lg">
-				<i style="font-size: 30px; color: #fff; margin-right: 10px;" class="fas fa-car"></i>
+				<a href="index.php" style="margin-right: 10px;"><img src="../img/truck.png" style="height: 35px; width: 35px;"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
 					aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"
 					style="border: #fff;">
@@ -114,12 +114,10 @@ include("server-functions/get-dados.php");
 					</div>
 				</a>
 					<a class="carousel-control-prev" href="#carousel-<?=$linha['id']?>" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Anterior</span>
+						<i class="fas fa-arrow-left"></i>
 					</a>
 					<a class="carousel-control-next" href="#carousel-<?=$linha['id']?>" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Próximo</span>
+						<i class="fas fa-arrow-right"></i>
 					</a>
 					</div>
 					<!-- Fim Imagem -->
