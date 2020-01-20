@@ -6,6 +6,7 @@ if($id == "") {
 	exit();
 }
 ?>
+<!DOCTYPE html>
 <html lang="pt-br">
 	<head>
 		<!-- Google -->
@@ -30,37 +31,7 @@ if($id == "") {
 	</head>
 	<body>
 
-		<!-- NavBar -->
-		<nav class="navbar navbar-expand-lg">
-		<i style="font-size: 30px; color: #fff; margin-right: 10px;" class="fas fa-car"></i>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-			aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"
-			style="border: #fff;">
-			<div id="menu"><i id="menu" class="fas fa-bars"></i></div>
-		</button>
-			<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#">Início<span class="sr-only"></span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Sobre Nós<span class="sr-only"></span></a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							Veículos
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Seila</a>
-							<a class="dropdown-item" href="#">Seila</a>
-							<a class="dropdown-item" href="#">Seila</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<!-- /NavBar -->
+		<?php include("modules/nav-bar.php"); ?>
 		
 		<!-- Consulta -->
 		<?php

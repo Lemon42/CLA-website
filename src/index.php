@@ -28,37 +28,7 @@ include("server-functions/get-dados.php");
 	<body>
 		<!-- Conteúdo -->
 		<div class="content">
-			<!-- NavBar -->
-			<nav class="navbar navbar-expand-lg">
-				<a href="index.php" style="margin-right: 10px;"><img src="../img/truck.png" style="height: 35px; width: 35px;"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-					aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"
-					style="border: #fff;">
-					<div id="menu"><i id="menu" class="fas fa-bars"></i></div>
-				</button>
-				<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Início<span class="sr-only"></span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Sobre Nós<span class="sr-only"></span></a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">
-								Veículos
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Seila</a>
-								<a class="dropdown-item" href="#">Seila</a>
-								<a class="dropdown-item" href="#">Seila</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- /NavBar -->
+			<?php include("modules/nav-bar.php"); ?>
 			
 			<!-- Container -->
 			<div class="container">
