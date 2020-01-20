@@ -27,21 +27,7 @@ require('../server-functions/autentica-login.php');
 </head>
 <body>
 
-    <!-- MENU -->
-	<nav class="pushy pushy-left" data-focus="#first-link">
-		<div class="pushy-content">
-			<h1>Olá, <?php echo $_SESSION['usuario'];?></h1>
-			<ul>
-				<li class="pushy-link"><a href="cadastro-veiculos.php">Cadastro de Veículos</a></li>
-				<li class="pushy-link"><a href="exclusao-veiculos.php">Exclusão de Veículos</a></li>
-				<li class="pushy-link sair"><a href="../server-functions/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-			</ul>
-		</div>
-	</nav>
-	<!-- Voltar com um click -->
-	<div class="site-overlay"></div>
-	<button class="menu-btn fixed-bottom"><i class="fas fa-bars"></i></button>
-	<!-- MENU FIM -->
+    <?php include("../modules/system-menu.php"); ?>
 	 
     <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
         onsubmit="return validaCampo(); return false;" enctype="multipart/form-data">
