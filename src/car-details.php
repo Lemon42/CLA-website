@@ -143,11 +143,7 @@ if($id == "") {
 		</div>
 		<!-- Fim conteúdo -->
 
-		<!-- Rodapé -->
-		<br>
-		<footer id="rodape">
-			<div class="footer-copyright text-center py-3">© 2019 Copyright</div>
-		</footer>
+		<?php include("modules/footer.php") ?>
 
 		<!-- Scripts Obrigatórios -->
 		<!-- Jquery JS -->
