@@ -11,6 +11,10 @@ require('../server-functions/autentica-login.php');
     <!-- CSS -->
     <link href="../../vendor/bootstrap-4/bootstrap.min.css" rel="stylesheet">
 
+	<!-- Menu -->
+	<link rel="stylesheet" href="../../vendor/menu/css/demo.css">
+	<link rel="stylesheet" href="../../vendor/menu/css/pushy.css">
+	
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
@@ -22,6 +26,23 @@ require('../server-functions/autentica-login.php');
 	</style>
 </head>
 <body>
+
+    <!-- MENU -->
+	<nav class="pushy pushy-left" data-focus="#first-link">
+		<div class="pushy-content">
+			<h1>Olá, <?php echo $_SESSION['usuario'];?></h1>
+			<ul>
+				<li class="pushy-link"><a href="cadastro-veiculos.php">Cadastro de Veículos</a></li>
+				<li class="pushy-link"><a href="exclusao-veiculos.php">Exclusão de Veículos</a></li>
+				<li class="pushy-link sair"><a href="../server-functions/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- Voltar com um click -->
+	<div class="site-overlay"></div>
+	<button class="menu-btn fixed-bottom"><i class="fas fa-bars"></i></button>
+	<!-- MENU FIM -->
+	 
     <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
         onsubmit="return validaCampo(); return false;" enctype="multipart/form-data">
 
@@ -62,15 +83,18 @@ require('../server-functions/autentica-login.php');
                 <input name="img[]" class="inputFile" type="file" alt="Submit" multiple="" required accept="image/*">
             </div>
             <div class="form-group">
-                <input class="btn btn-outline-primary" name="cadastrar" type="submit" id="cadastrar" value="Cadastrar!" />
+                <input class="btn btn-outline-primary" style="margin-bottom: 50px;" name="cadastrar" type="submit" id="cadastrar" value="Cadastrar!" />
             </div>
         </div>
     </form>
+
     <!-- Scripts Obrigatórios -->
     <!-- Jquery JS -->
     <script src="../../vendor/jquery/3.4.1.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="../../vendor/bootstrap-4/bootstrap.min.js"></script>
+	<script src="../../vendor/bootstrap-4/bootstrap.min.js"></script>
+	<!-- JS do MENU -->
+    <script src="../../vendor/menu/js/pushy.min.js"></script>
     <!-- FontAwesome JS -->
     <script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
     <!-- Validação -->
