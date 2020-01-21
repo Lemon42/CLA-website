@@ -160,3 +160,9 @@ a:hover{
    color: #fff;
 }
 /* Fim Rodapé */
+
+/* JS Helper */
+.invisivel{
+  display: none;
+}
+/* Fim JS Helper */
