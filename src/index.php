@@ -49,8 +49,8 @@ include("server-functions/get-dados.php");
 					if($total > 0) {
 						do {
 				?>
-				<div class="col-md-6 col-xl-4 mb-3 mb-md-4">
-					<div class="card">
+				<div class="col-md-6 col-xl-4 mb-3 mb-md-4 veiculo">
+					<div id="car-<?=$linha['id']?>" class="card">
 						<a href="car-details.php?id=<?php echo $linha['id'] ?>">
 							<div class="card-body">
 								<h5 class="card-title"><?=$linha['nome']?></h5>
@@ -119,9 +119,10 @@ include("server-functions/get-dados.php");
 		<script src="../vendor/jquery/3.4.1.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="../vendor/bootstrap-4/bootstrap.min.js"></script>
+		<!-- Sistema de Busca -->
+		<script src="../js/busca-veiculos.js"></script>
 		<!-- FontAwesome JS -->
 		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
-
 		<script>
 			$('.carousel').carousel({
   				interval: 2500
