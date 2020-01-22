@@ -35,7 +35,7 @@ session_start();
 							if(isset($_SESSION['nao_autenticado'])):
 							?>
 							<div class="alert alert-danger">
-								ERRO: Usuário ou senha inválidos.
+								<h5><i class="fas fa-lock"></i> Usuário ou senha inválidos.</h5>
 							</div>
 							<?php
 							endif;
@@ -65,5 +65,7 @@ session_start();
 		<script src="../../vendor/jquery/3.4.1.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="../../vendor/bootstrap-4/bootstrap.min.js"></script>
+		<!-- FontAwesome JS -->
+		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
 	</body>
 </html>
