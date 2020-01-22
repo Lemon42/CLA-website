@@ -37,7 +37,7 @@ include("server-functions/get-dados.php");
 					<div id="divBarraPesquisa" class="form-group mb-4">
 						<form>
 							<input id="barraPesquisa" type="text" class="form-control form-control-underlined border-danger"
-								placeholder="Procure por um veículo" autocomplete="off">
+								placeholder="&#xf002 Procure por um veículo" style="font-family:Roboto, FontAwesome" autocomplete="off">
 						</form>
 					</div>
 				</center>
@@ -106,6 +106,16 @@ include("server-functions/get-dados.php");
 				?>
 				</div>
 				<!-- /CardsVeículos -->
+				
+				<!-- Sem resultados -->
+				<div class="sem-resultados">
+					<center>
+						<h1><i class="fas fa-exclamation-triangle"></i></h1>
+						<h4>Ops! Sem resultados . . .</h4>
+						<h6>(tente buscar por outros termos ou volte mais tarde ;D)</h6>
+					</center>
+				</div>
+				<!-- Fim Sem resultados -->
 
 			</div>
 			<!-- /Container -->
@@ -123,6 +133,7 @@ include("server-functions/get-dados.php");
 		<script src="../js/busca-veiculos.js"></script>
 		<!-- FontAwesome JS -->
 		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
+
 		<script>
 			$('.carousel').carousel({
   				interval: 2500
