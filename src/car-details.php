@@ -1,9 +1,16 @@
 <?php
 include("server-functions/connect.php");
-$id = $_GET["id"];
-if($id == "") {
+
+if(!isset($_GET["id"])) {
 	header('Location: index.php');
 	exit();
+} else {
+	$id = $_GET["id"];
+
+	if($id == "") {
+		header('Location: index.php');
+		exit();
+	}
 }
 ?>
 <!DOCTYPE html>
