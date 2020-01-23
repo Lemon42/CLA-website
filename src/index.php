@@ -1,7 +1,31 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 include("server-functions/connect.php");
-include("server-functions/get-dados.php");
+
+if(!isset($_GET["search"])) {
+	$query = sprintf("SELECT * FROM veiculos");
+	$tipo = " veículo";
+} else {
+	$search = $_GET["search"];
+
+	if($search == "carro") {
+	$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Carro'");
+	$tipo = " carro";
+	} elseif ($search == "moto"){
+		$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Moto'");
+		$tipo = "a moto";
+	} elseif ($search == "caminhao"){
+		$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Caminhao'");
+		$tipo = " caminhão";
+	} else{
+		$query = sprintf("SELECT * FROM veiculos");
+		$tipo = " veículo";
+	}
+}
+
+$dados = mysql_query($query, $con) or die(mysql_error());
+$linha = mysql_fetch_assoc($dados);
+$total = mysql_num_rows($dados);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +61,7 @@ include("server-functions/get-dados.php");
 					<div id="divBarraPesquisa" class="form-group mb-4">
 						<form>
 							<input id="barraPesquisa" type="text" class="form-control form-control-underlined border-danger"
-								placeholder="&#xf002 Procure por um veículo" style="font-family:Roboto, FontAwesome" autocomplete="off">
+								placeholder="&#xf002 Procure por um<?=$tipo?>" style="font-family:Roboto, FontAwesome" autocomplete="off">
 						</form>
 					</div>
 				</center>
@@ -56,7 +80,7 @@ include("server-functions/get-dados.php");
 								<h5 class="card-title"><?=$linha['nome']?></h5>
 						</a>
 						<!-- Imagem -->
-						<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade" data-ride="carousel">
+						<div id="carousel-<?=$linha['id']?>" class="carousel slide carousel-fade">
 							<div class="carousel-inner">
 						<?php
 						$id = $linha['id'];
@@ -135,9 +159,7 @@ include("server-functions/get-dados.php");
 		<script src="https://kit.fontawesome.com/04be2c50c3.js" crossorigin="anonymous"></script>
 
 		<script>
-			$('.carousel').carousel({
-  				interval: 2500
-			})
+			$('.carousel').carousel('pause');
 		</script>
 	</body>
 </html>

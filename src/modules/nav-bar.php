@@ -20,9 +20,10 @@
 								Veículos
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Seila</a>
-								<a class="dropdown-item" href="#">Seila</a>
-								<a class="dropdown-item" href="#">Seila</a>
+								<a class="dropdown-item" href="index.php">Todos</a>
+								<a class="dropdown-item" href="index.php?search=carro">Carros</a>
+								<a class="dropdown-item" href="index.php?search=moto">Motos</a>
+								<a class="dropdown-item" href="index.php?search=caminhao">Caminhões</a>
 							</div>
 						</li>
 					</ul>
