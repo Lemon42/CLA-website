@@ -1,6 +1,7 @@
 #tabala-exclusao img{
-    height: 150px;
-    width: auto;
+  height: 150px !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
 }
 
 #tabala-exclusao td, th {
