@@ -9,8 +9,8 @@ if(!isset($_GET["search"])) {
 	$search = $_GET["search"];
 
 	if($search == "carro") {
-	$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Carro'");
-	$tipo = " carro";
+		$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Carro'");
+		$tipo = " carro";
 	} elseif ($search == "moto"){
 		$query = sprintf("SELECT * FROM veiculos WHERE tipo = 'Moto'");
 		$tipo = "a moto";
@@ -58,12 +58,12 @@ $total = mysql_num_rows($dados);
 			<div class="container">
 				<!-- BarraPesquisa -->
 				<center>
-					<div id="divBarraPesquisa" class="form-group mb-4">
-						<form>
-							<input id="barraPesquisa" type="text" class="form-control form-control-underlined border-danger"
-								placeholder="&#xf002 Procure por um<?=$tipo?>" style="font-family:Roboto, FontAwesome" autocomplete="off">
-						</form>
-					</div>
+				<div id="divBarraPesquisa">
+					<form>
+						<input id="barraPesquisa" type="text" class="form-control form-control-underlined border-danger"
+							placeholder="&#xf002 Procure por um<?=$tipo?>" style="font-family:Roboto, FontAwesome" autocomplete="off">
+					</form>
+				</div>
 				</center>
 				<!-- /BarraPesquisa -->
 
