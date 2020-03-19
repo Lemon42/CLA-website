@@ -22,13 +22,12 @@ require('../server-functions/autentica-login.php');
     <link rel="shortcut icon" href="../../img/engrenagem.png" type="image/x-icon" />
 
     <style>
-		body{font-family: 'Roboto', sans-serif;}
+        body{font-family: 'Roboto', sans-serif;}
 	</style>
 </head>
 <body>
 
-    <?php include("../modules/system-menu.php"); ?>
-	 
+    <?php include("../modules/system-menu.php"); ?>	
     <form id="cadastro" name="cadastro" method="post" action="../server-functions/cadastro-exec.php"
         onsubmit="return validaCampo(); return false;" enctype="multipart/form-data">
 
