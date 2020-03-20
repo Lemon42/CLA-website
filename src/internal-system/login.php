@@ -10,7 +10,6 @@ session_start();
 
 		<!-- CSS -->
 		<link href="../../vendor/bootstrap-4/bootstrap.min.css" rel="stylesheet">
-		<link href="../../css/login-style.css" rel="stylesheet">
 
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
