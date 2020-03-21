@@ -33,26 +33,26 @@ require('../server-functions/autentica-login.php');
 
         <div class="form-control">
             <div class="form-group">
-                <label for="label"><i class="far fa-bookmark"></i><strong style="margin-left: 8px;">Cadastro de Veículos</strong></label>
+                <label><i class="far fa-bookmark"></i><strong style="margin-left: 8px;">Cadastro de Veículos</strong></label>
             </div>
             <div class="form-group">
-                <label for="label">Nome:</label>
+                <label>Nome:</label>
                 <input name="nome" placeholder="Marca e nome do veículo" class="campo-formulario form-control" type="text" id="nome" autocomplete="off" />
             </div>
             <div class="form-group">
-                <label for="label">Descrição:</label>
+                <label>Descrição:</label>
                 <input name="descricao" placeholder="Características importantes do veículo" class="campo-formulario form-control" type="text" id="descricao" autocomplete="off" />
             </div>
             <div class="form-group">
-                <label for="label">Quilometragem:</label>
+                <label>Quilometragem:</label>
                 <input name="km" placeholder="Quanto que o veiculo andou ao todo" class="campo-formulario form-control quilometro" id="km" autocomplete="off" />
             </div>
             <div class="form-group">
-                <label for="label">Ano:</label>
+                <label>Ano:</label>
                 <td width="546"><input name="ano" placeholder="Ano de fabricação" class="campo-formulario form-control" type="number" id="ano" autocomplete="off" />
             </div>
             <div class="form-group">
-                <label for="label">Tipo de Veiculo:</label>
+                <label>Tipo de Veiculo:</label>
                 <select name="tipo" class="campo-formulario form-control" type="text" id="tipo">
                     <option>Carro</option>
                     <option>Caminhão</option>
