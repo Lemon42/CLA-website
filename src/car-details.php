@@ -45,6 +45,10 @@ if(!isset($_GET["id"])) {
 		$query = sprintf("SELECT * FROM veiculos WHERE id = '$id'");
 		$dados = mysql_query($query, $con) or die(mysql_error());
 		$linha = mysql_fetch_assoc($dados);
+
+		$queryInfo = sprintf("SELECT * FROM `veiculos-info` WHERE id = '$id'");
+		$dadosInfo = mysql_query($queryInfo, $con) or die(mysql_error());
+		$linhaInfo = mysql_fetch_assoc($dadosInfo);
 		?>
 		<!-- Fim Consulta -->
 
@@ -113,7 +117,7 @@ if(!isset($_GET["id"])) {
 				<br>
 				<!-- Fim Imagem -->
 
-				<!-- Description -->
+				<!-- Descrição -->
 				<a class="desc-title">Informações</a>
 				<hr class="hr-maior">
 				<div class="row">
@@ -126,23 +130,23 @@ if(!isset($_GET["id"])) {
 						<a class="desc-item-2"><?=$linha['km']?></a>
 					</div>
 					<div class="col">
-						<a class="desc-item">Configuração</a>
-						<a class="desc-item-2">Hatch</a>
+						<a class="desc-item">Combustível:</a>
+						<a class="desc-item-2"><?=$linhaInfo['combustivel']?></a>
 					</div>
 				</div>
 				<hr class="hr-menor">
 				<div class="row">
 					<div class="col">
-						<a class="desc-item">Porte:</a>
-						<a class="desc-item-2">Médio</a>
+						<a class="desc-item">Cor:</a>
+						<a class="desc-item-2"><?=$linhaInfo['cor']?></a>
 					</div>
 					<div class="col">
 						<a class="desc-item">Ocupantes:</a>
-						<a class="desc-item-2">5 </a>
+						<a class="desc-item-2"><?=$linhaInfo['ocupantes']?></a>
 					</div>
 					<div class="col">
-						<a class="desc-item">Portas:</a>
-						<a class="desc-item_2">4</a>
+						<a class="desc-item">Licenciado:</a>
+						<a class="desc-item-2"><?=$linhaInfo['licenciado']?></a>
 					</div>
 				</div>
 				<br>

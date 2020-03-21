@@ -9,7 +9,7 @@
 <?php
 include("connect.php");
 
-// Pegando os dados
+// Pegando os dados (basicos)
 $nome = $_POST["nome"];
 $descricao = $_POST["descricao"];
 $km = $_POST["km"];
@@ -24,8 +24,10 @@ $query = "
 ";
 mysql_query($query,$con);
 
-// Imagem
+// Pegando o ID que o veiculo vai ter
 $ultimoId = mysql_insert_id();
+
+// Imagem
 $filename = $_FILES['img']['name'];
 $file_tmp = $_FILES['img']['tmp_name'];
 $filetype = $_FILES['img']['type'];
@@ -43,6 +45,19 @@ for($i=0; $i<=count($file_tmp); $i++){
 		}
 	}
 }
+
+// Adicionando informações extras
+$combustivel = $_POST["combustivel"];
+$cor = $_POST["cor"];
+$ocupantes = $_POST["ocupantes"];
+$licenciado = $_POST["licenciado"];
+
+$query = "
+    INSERT INTO `veiculos-info` ( `combustivel` , `cor` , `ocupantes` , `licenciado` , `id`)
+    VALUES ('$combustivel', '$cor', '$ocupantes', '$licenciado', '$ultimoId ')
+";
+mysql_query($query,$con);
+
 
 // Voltando para a Página de Cadastro
 header('Location: ../internal-system/cadastro-veiculos.php');

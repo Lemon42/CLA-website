@@ -23,6 +23,12 @@ $query = "
 ";
 mysql_query($query,$con);
 
+// Deletando Informações Extras
+$query = "
+    DELETE FROM `veiculos-info` WHERE  id = '$id'
+";
+mysql_query($query,$con);
+
 // Redirecionando para a pagina de exclusão
 header('Location: ../internal-system/exclusao-veiculos.php');
 exit();

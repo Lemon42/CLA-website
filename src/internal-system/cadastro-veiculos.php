@@ -59,6 +59,30 @@ require('../server-functions/autentica-login.php');
                     <option>Moto</option>
                 </select>
             </div>
+			<div class="form-group">
+                <label>Combustível:</label>
+                <select name="combustivel" class="campo-formulario form-control" type="text" id="combustivel">
+                    <option>Gasolina e álcool</option>
+                    <option>Gasolina</option>
+                    <option>Álcool</option>
+					<option>Elétrico</option>
+                </select>
+            </div>
+			<div class="form-group">
+                <label>Cor:</label>
+                <input name="cor" placeholder="Cor predominante do veículo" class="campo-formulario form-control" type="text" id="cor" autocomplete="off" />
+            </div>
+			<div class="form-group">
+                <label>Ocupantes:</label>
+                <input name="ocupantes" min="0" max="50" type="number" placeholder="Quantas pessoas que cabem no veiculo" class="campo-formulario form-control" id="ocupantes" autocomplete="off" />
+            </div>
+			<div class="form-group">
+                <label>Licenciado:</label>
+                <select name="licenciado" class="campo-formulario form-control" type="text" id="licenciado">
+                    <option>SIM</option>
+                    <option>NÃO</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="label">Valor:</label>
                 <input name="valor" placeholder="R$" class="campo-formulario form-control dinheiro" type="text" id="valor" autocomplete="off" />
